@@ -1,0 +1,160 @@
+$fontcolor: #333333
+$blue: #7ecefd
+
+body
+	padding-top: 99px
+	font-family: "museo-sans", "Helvetica Neue",Helvetica,Arial,sans-serif
+	color: $fontcolor
+h1, h2, h3, h4, h5
+	font-family: "museo-sans", "Helvetica Neue",Helvetica,Arial,sans-serif
+h2
+	font-size: 27px
+	font-weight: 700
+p
+	font-size: 18px
+	font-weight: 300
+	margin-top: 15px
+a
+	color: #ff6867
+a:hover
+	color: #ff6867
+	text-decoration: underline
+
+.row
+	padding: 20px 0px
+#header
+	background-color: #ff6867
+	border: none
+	padding-top: 30px
+	.navbar-brand
+		margin-top: -10px
+	ul#menu
+		margin-right: 10px
+		li
+			font-weight: 700
+			text-transform: uppercase
+			font-style: normal
+			vertical-align: bottom
+			font-size: 16px
+			a
+				color: $fontcolor
+		li.active a, li a:hover
+			background-color: transparent
+			color: #fff
+		li#lang
+			margin-left: 15px
+			font-weight: 300
+			text-transform: uppercase
+			font-style: normal
+			vertical-align: bottom
+			font-size: 16px
+			color: $fontcolor
+			padding-right: 0
+			padding-left: 2px
+			button
+				margin-top: 12px
+				background-color: transparent
+				border: none
+				padding: 0px
+				color: $fontcolor
+			button.selected
+				color: #fff
+			button:hover
+				text-decoration: underline
+.img-top
+	overflow: hidden
+	position: relative
+	height: 420px
+	margin-bottom: 15px
+	img
+		position: absolute
+	h1
+		position: relative
+		font-weight: 700
+		margin-top: 120px
+		color: #fff
+		padding: 10px 0px
+		font-size: 50px
+		border-top: 5px solid #fff
+		border-bottom: 5px solid #fff
+		line-height: 60px
+.controls
+	ul
+		float: right
+	li.filter
+		text-transform: uppercase
+		a
+			color: $fontcolor
+			border: 2px solid #fff
+			&:hover
+				background-color: transparent
+				color: $blue
+	li.filter.active 
+		a
+			background-color: transparent
+			color: $fontcolor
+			border: 2px solid $fontcolor
+			border-radius: 0px
+#grid 
+	.mix
+		opacity: 0
+		display: none
+		margin-bottom: 30px
+		a
+			text-decoration: none
+			img
+			.title
+				display: none
+				background-color: $blue
+				height: 70px
+				margin-top: -70px
+				padding: 15px
+				position: relative
+				z-index: 9999
+				.name
+					color: $fontcolor
+					font-weight: 700
+					text-transform: uppercase
+					width: 100%
+					font-size: 17px
+				.cat
+					color: $fontcolor
+					font-style: italic
+			&:hover
+				.title
+					display: block
+hr.bottom
+	border: 2px solid $fontcolor
+.footer
+	padding: 0px
+	padding-bottom: 10px
+	font-weight: 700
+	p
+		margin: 0px
+	.mail
+		text-align: right
+		font-style: italic
+	.mail a:hover
+		color: #ff6867
+		text-decoration: underline
+#breadcrumb
+	font-size: 16px
+	margin-top: 10px
+	font-weight: 500
+	border-bottom: 1px solid rgb(238,238,238)
+	a
+		color: $fontcolor
+.link
+	background-color: $blue
+	padding: 5px 8px
+	color: #fff
+	font-style: italic
+	font-weight: 700
+	font-size: 17px
+#images
+	img
+		margin-bottom: 30px
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus
+	background-color: transparent
+

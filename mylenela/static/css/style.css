@@ -44,20 +44,26 @@ a:hover {
     #header ul#menu li.active a, #header ul#menu li a:hover {
       background-color: transparent;
       color: white; }
-  #header ul#lang {
-    margin-left: 15px; }
-    #header ul#lang li {
+    #header ul#menu li#lang {
+      margin-left: 15px;
       font-weight: 300;
       text-transform: uppercase;
       font-style: normal;
       vertical-align: bottom;
-      font-size: 16px; }
-      #header ul#lang li a {
-        color: #333333;
-        padding-right: 0;
-        padding-left: 2px; }
-    #header ul#lang li.active a, #header ul#lang li a:hover {
-      color: white; }
+      font-size: 16px;
+      color: #333333;
+      padding-right: 0;
+      padding-left: 2px; }
+      #header ul#menu li#lang button {
+        margin-top: 12px;
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        color: #333333; }
+      #header ul#menu li#lang button.selected {
+        color: white; }
+      #header ul#menu li#lang button:hover {
+        text-decoration: underline; }
 
 .img-top {
   overflow: hidden;
