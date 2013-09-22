@@ -18,11 +18,11 @@ REDIS_URL = urlparse(os.environ.get('REDISCLOUD_URL', 'redis://localhost:6959'))
 CACHES = {
     "default": {
         "BACKEND": "redis_cache.cache.RedisCache",
-        "LOCATION": '%s:%s' % (redis_url.hostname, redis_url.port),
+        "LOCATION": '%s:%s' % (REDIS_URL.hostname, REDIS_URL.port),
         "OPTIONS": {
             "DB": 0,
             "CLIENT_CLASS": "redis_cache.client.DefaultClient",
-            'PASSWORD': redis_url.password
+            'PASSWORD': REDIS_URL.password
         }
     }
 }
