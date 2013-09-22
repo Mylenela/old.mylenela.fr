@@ -21,7 +21,6 @@ CACHES = {
         "LOCATION": '%s:%s' % (REDIS_URL.hostname, REDIS_URL.port),
         "OPTIONS": {
             "DB": 0,
-            "CLIENT_CLASS": "redis_cache.client.DefaultClient",
             'PASSWORD': REDIS_URL.password
         }
     }
