@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% if LANGUAGE_CODE == 'fr' %}
+    <html lang="fr">
+{% else %}
+    <html lang="en">
+{% endif %}
+<head>
+    <title>{% trans "MyleneLa - Graphic Design and Webdesign" %}</title>
+</head>
+<body>
+    {% include "header.html" %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <form action="/{{ LANGUAGE_CODE }}/localeurl/change/" method="POST">
+    {% csrf_token %}
+        {% if LANGUAGE_CODE == "en" %}
+            <button class="selected" name="locale" value="en">EN</button>
+            <button name="locale" value="fr">FR</button>
+        {% else %}
+            <button name="locale" value="en">EN</button>
+            <button class="selected" name="locale" value="fr">FR</button>
+        {% endif %}
+        <input type="hidden" name="next" value="{{ request.path }}" />
+    </form>
+    {% block content %}{% endblock %}
+
+    <div id="footer">
+        {% include "footer.html" %}
+    </div>
+</body>
+</html>

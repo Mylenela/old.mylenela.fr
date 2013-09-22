@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ page.name }}{% endblock %}
+
+{% block content %}
+{% load i18n %}
+    <h1>{% trans "Oups... This page doesn't exist" %}</h1>
+    {% trans "Let's go the homepage" %} <a href="/">{% trans "here" %} </a>!
+{% endblock %}
