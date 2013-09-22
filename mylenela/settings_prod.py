@@ -4,7 +4,9 @@ from mylenela.settings import *
 ENV = "prod"
 DEBUG = False
 
-INSTALLED_APPS += ('storages',)
+INSTALLED_APPS += (
+    'storages',
+    'redis_cache')
 
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse(os.environ.get(
