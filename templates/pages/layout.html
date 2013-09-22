@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load i18n %}
+{% load staticfiles %}
 {% if LANGUAGE_CODE == 'fr' %}
     <html lang="fr">
 {% else %}
@@ -7,6 +8,7 @@
 {% endif %}
 <head>
     <title>{% trans "MyleneLa - Graphic Design and Webdesign" %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 </head>
 <body>
     {% include "header.html" %}
