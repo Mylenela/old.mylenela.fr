@@ -9,7 +9,11 @@ INSTALLED_APPS += ('storages',)
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse(os.environ.get(
     'DATABASE_URL'))}
-ALLOWED_HOSTS = ['localhost']
+
+ALLOWED_HOSTS = [
+    'www-mylenela-fr.herokuapp.com',
+    'www.mylenela.fr',
+    'mylenela.fr']
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
