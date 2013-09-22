@@ -14,17 +14,17 @@ import dj_database_url
 DATABASES = {'default': dj_database_url.parse(os.environ.get(
     'DATABASE_URL'))}
 
-REDIS_URL = urlparse(os.environ.get('REDISCLOUD_URL', 'redis://localhost:6959'))
-CACHES = {
-    "default": {
-        "BACKEND": "redis_cache.cache.RedisCache",
-        "LOCATION": '%s:%s' % (REDIS_URL.hostname, REDIS_URL.port),
-        "OPTIONS": {
-            "DB": 0,
-            'PASSWORD': REDIS_URL.password
-        }
-    }
-}
+# REDIS_URL = urlparse(os.environ.get('REDISCLOUD_URL', 'redis://localhost:6959'))
+# CACHES = {
+#     "default": {
+#         "BACKEND": "redis_cache.cache.RedisCache",
+#         "LOCATION": '%s:%s' % (REDIS_URL.hostname, REDIS_URL.port),
+#         "OPTIONS": {
+#             "DB": 0,
+#             'PASSWORD': REDIS_URL.password
+#         }
+#     }
+# }
 
 ALLOWED_HOSTS = ['*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
