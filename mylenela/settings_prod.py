@@ -1,3 +1,5 @@
+from urlparse import urlparse
+
 SECRET_KEY = "FUCKIT"
 from mylenela.settings import *
 
@@ -12,15 +14,18 @@ import dj_database_url
 DATABASES = {'default': dj_database_url.parse(os.environ.get(
     'DATABASE_URL'))}
 
-# CACHES = {
-#     "default": {
-#         "BACKEND": "redis_cache.cache.RedisCache",
-#         "LOCATION": os.environ.get('REDISCLOUD_URL'),
-#         "OPTIONS": {
-#             "CLIENT_CLASS": "redis_cache.client.DefaultClient",
-#         }
-#     }
-# }
+REDIS_URL = urlparse(os.environ.get('REDISCLOUD_URL', 'redis://localhost:6959'))
+CACHES = {
+    "default": {
+        "BACKEND": "redis_cache.cache.RedisCache",
+        "LOCATION": '%s:%s' % (redis_url.hostname, redis_url.port),
+        "OPTIONS": {
+            "DB": 0,
+            "CLIENT_CLASS": "redis_cache.client.DefaultClient",
+            'PASSWORD': redis_url.password
+        }
+    }
+}
 
 ALLOWED_HOSTS = ['*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
