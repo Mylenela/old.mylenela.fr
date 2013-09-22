@@ -39,7 +39,7 @@
 		      	<ul class="nav nav-pills">
 					<li class="filter" data-filter="all"><a href="#work">{% trans "All" %}</a></li>
 					{% for category in categories %}
-						<li class="filter" data-filter="project-{{ category.slug }}"><a href="#">{{ category.name }}</a></li>
+						<li class="filter" data-filter="project-{{ category.slug }}"><a href="#work">{{ category.name }}</a></li>
 					{% endfor %}
 				</ul>
 		  	</div>
