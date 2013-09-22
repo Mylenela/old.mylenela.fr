@@ -45,3 +45,13 @@ def virtualenv(command):
 @task
 def init_virtualenv():
     local('virtualenv virtenv')
+
+
+@task
+def update_messages():
+    local('virtenv/bin/python manage.py makemessages -l fr -i virtenv -i venv')
+
+
+@task
+def compile_messages():
+    local('virtenv/bin/python manage.py compilemessages')

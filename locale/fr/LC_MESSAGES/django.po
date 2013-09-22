@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-22 19:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: mylenela/settings.py:137
+msgid "English"
+msgstr ""
+
+#: mylenela/settings.py:138
+msgid "French"
+msgstr ""
+
+#: templates/404.html:7
+msgid "Oups... This page doesn't exist"
+msgstr ""
+
+#: templates/404.html:8
+msgid "Let's go the homepage"
+msgstr ""
+
+#: templates/404.html:8
+msgid "here"
+msgstr ""
+
+#: templates/500.html:7
+msgid "Oups the servor is not happy right now !"
+msgstr ""
+
+#: templates/500.html:8
+msgid "Please try to reload a bit later"
+msgstr ""
+
+#: templates/pages/footer.html:5
+msgid "Mylène Larnaud |\tTel: +33(7) 70 53 63 33 | 44000 Nantes (France)"
+msgstr ""
+
+#: templates/pages/footer.html:8
+msgid "Contact me here ! "
+msgstr ""
+
+#: templates/pages/header.html:16
+msgid "Home"
+msgstr ""
+
+#: templates/pages/header.html:17
+msgid "About"
+msgstr ""
+
+#: templates/pages/header.html:18
+msgid "Work"
+msgstr ""
+
+#: templates/pages/home.html:14
+msgid "Graphic Designer &amp; Illustrator<br>from Earth"
+msgstr ""
+
+#: templates/pages/home.html:23
+msgid ""
+"I'm a Graphic Designer &amp; Illustrator from Nantes, France. I cleverly "
+"combine design, creativity <br>and interactivity"
+msgstr ""
+
+#: templates/pages/home.html:36
+msgid "Selected Works"
+msgstr ""
+
+#: templates/pages/home.html:40
+msgid "All"
+msgstr ""
+
+#: templates/projects/project.html:9
+msgid "Selected Work"
+msgstr ""
