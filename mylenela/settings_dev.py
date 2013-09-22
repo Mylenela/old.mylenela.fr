@@ -35,3 +35,15 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 INTERNAL_IPS = ('127.0.0.1', '203.35.33.226')
 TAG = 'body'
+
+STATIC_ROOT = os.path.join(SITE_ROOT, "static")
+STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, "mylenela", "assets"),
+)
+
+LOCALE_INDEPENDENT_PATHS = (
+    r'^/static',
+    r'^/media',
+)
+
+ALLOWED_HOSTS = ['localhost']
