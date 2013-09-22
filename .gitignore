@@ -5,3 +5,4 @@ virtenv
 *.sublime-workspace
 static
 uploads
+.DS_Store
