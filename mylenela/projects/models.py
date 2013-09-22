@@ -6,6 +6,13 @@ from django.core.cache import cache
 from transmeta import TransMeta
 
 
+class Image(models.Model):
+    image = models.FileField(upload_to='images')
+
+    def __unicode__(self):
+        return self.filename
+
+
 class Category(models.Model):
     __metaclass__ = TransMeta
 
