@@ -19,7 +19,7 @@ def view_home(request):
     categories = cache.get('categories')
 
     if not cache.get('projects'):
-        projects = Project.objects.all()
+        projects = Project.objects.all().order_by('-date')
         cache.set('projects', projects)
     projects = cache.get('projects')
 
