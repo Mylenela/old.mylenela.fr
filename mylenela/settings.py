@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'south',
+    'storages',
     'localeurl',
     'mylenela.projects',
     'mylenela.pages'
