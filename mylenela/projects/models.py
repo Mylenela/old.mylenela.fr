@@ -57,7 +57,7 @@ class Project(models.Model):
         cache.delete('projects')
         super(Project, self).save(*args, **kwargs)
         cache.set('project:%s:categories' % self.slug, self.categories.all())
-        cache.set('projects', Project.objects.all())
+        cache.set('projects', Project.objects.all().order_by('-date'))
 
     def get_images(self):
         return self.images.split(',')
