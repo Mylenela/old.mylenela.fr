@@ -3,5 +3,5 @@ gunicorn==18.0
 boto==2.13.3
 psycopg2==2.4.5
 dj-database-url==0.2.0
-pylibmc==1.2.2
 django-pylibmc-sasl==0.2.4
+pylibmc==1.2.3
