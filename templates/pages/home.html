@@ -4,39 +4,62 @@
 
 {% block content %}
 {% load i18n %}
+{% load staticfiles %}
 {% load project_extras %}
-<h1>{% trans "Hi, i'm a graphic and web designer.<br>I cleverly combine design, creativity and interactivity" %}</h1>
-<p>{{ home.content|safe }}</p>
-<hr>
-
-<ul>
-    <li><a href="#" onclick="goCategory('all')">{% trans "All" %}</a></li>
-{% for category in categories %}
-    <li><a href="#" onclick="goCategory('{{ category.slug }}')">{{ category.name }}</a></li>
-{% endfor %}
-</ul>
-
-{% for project in projects %}
-    <div class="project {{ project|class:"category" }}">
-        <img src="{{ project.img }}">
-        <span>{{ project.name }}</span> |
-        <span>{{ project.get_categories|join:" " }}</span> |
-        <a href="{% url 'view_project'  project.slug %}">{{ project.name }}</a>
+<div class="img-top">
+    	<img src="{% static "img/top.jpg" %}" alt="mylenela">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8 col-md-offset-2">
+    				<h1 class="text-center">{% trans "Graphic Designer &amp; Illustrator<br>from Earth" %}</h1>
+    			</div>
+    		</div>
+    	</div>
     </div>
-{% endfor %}
+    <div class="container">
+		<div class="row" id="about">
+		    <div class="col-lg-4">
+		     	<h2>
+		     		{% trans "I'm a Graphic Designer &amp; Illustrator from Nantes, France. I cleverly combine design, creativity <br>and interactivity" %}
+				</h2>
+				<a href="http://dribbble.com/MyleneLa"><img src="{% static "img/dribbble.png" %}" alt="dribbble mylenela"></a>
+		    </div>
+		    <div class="col-lg-8">
+		    	{{ home.content|safe }}
+		    </div>
+		</div>
+		<hr>
+
+
+		<div class="row" id="work">
+		  	<div class="col-lg-4">
+		  		<h2>{% trans "Selected Works" %}</h2>
+		  	</div>
+		  	<div class="col-lg-8 col-sm-12 controls">
+		      	<ul class="nav nav-pills">
+					<li class="filter" data-filter="all"><a href="#">{% trans "All" %}</a></li>
+					{% for category in categories %}
+						<li class="filter" data-filter="project-{{ category.slug }}"><a href="#">{{ category.name }}</a></li>
+					{% endfor %}
+				</ul>
+		  	</div>
+		</div>
+
+		<div class="row" id="grid">
+			{% for project in projects %}
+			<div class="col-md-3 col-sm-4 col-xs-6 mix {{ project|class:"project" }}">
+		      	<a href="{% url 'view_project'  project.slug %}">
+		        	<img class="img-responsive" src="{{ project.img }}" alt="{{ project.name }}">
+		        	<div class="title">
+		        		<span class="name">{{ project.name }}</span>
+		        		<span class="cat">{{ project.get_categories|join:" " }}</span>
+		        	</div>
+		    	</a>
+			</div>
+			{% endfor %}
+		</div>
+
 <script type="text/javascript">
-    var projects = document.getElementsByClassName('project');
-    function goCategory(name) {
-        for (var i=0;i<projects.length;i++) {
-            var project = projects[i];
-            if (name == "all")
-                project.style.display = "";
-            else if (project.classList.contains("category-" + name))
-                project.style.display = "";
-            else
-                project.style.display = "none";
-        }
-    }
-    goCategory('all');
+
 </script>
 {% endblock %}

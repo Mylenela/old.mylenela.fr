@@ -2,16 +2,29 @@
 {% block title %}{{ project.name }}{% endblock %}
 {% block content %}
 {% load i18n %}
-    <h2>{{ project.name }}</h2>
-    {{ project.category }}
-    {% if project.link  %}
-        <a class="link" target="_blank" href="{{ project.link }}">{{ project.link }}</a>
-    {% endif %}
-    {{ project.description|safe }}
 
-    <ul>
-    {% for image in project.get_images %}
-        <li><img src="{{ image }}" alt="{{ project.name }}"/></li>
-    {% endfor %}
-    </ul>
+<div class="container">
+	<div class="row" id="breadcrumb">
+		<div class="col-lg-12">
+			Mylenela › <a href="/#work">{% trans "Selected Work" %}</a> › {{ project.name }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+          	<h2>{{ project.name }}</h2>
+          	{% if project.link  %}
+       			<a class="link" target="_blank" href="{{ project.link }}">{{ project.link }}</a>
+    		{% endif %}
+        </div>
+        <div class="col-lg-8">
+          	{{ project.description|safe }}
+        </div>
+	</div>
+	<div class="row" id="images">
+		{% for image in project.get_images %}
+			<div class="col-lg-12">
+				<img class="img-responsive" src="{{ image }}" alt="{{ project.name }}">
+			</div>
+		{% endfor %}
+	</div>
 {% endblock %}

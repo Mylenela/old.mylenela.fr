@@ -1,3 +1,37 @@
 {% load i18n %}
+{% load staticfiles %}
+<div class="container">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="/">
+	  	<img src="{% static "img/mylenela.png" %}" alt="mylenela logo" title="mylenela"/>
+	  </a>
+	</div>
+	<div class="navbar-collapse collapse">
+	  <ul id="menu" class="nav navbar-nav navbar-right">
+	    <li><a href="/">{% trans "Home" %}</a></li>
+	    <li><a href="/#about">{% trans "About" %}</a></li>
+	    <li><a href="/#work">{% trans "Work" %}</a></li>
+	    {% get_current_language as LANGUAGE_CODE %}
+	    <li id="lang">
+		    <form action="/{{ LANGUAGE_CODE }}/localeurl/change/" method="POST">
+		    {% csrf_token %}
+		        {% if LANGUAGE_CODE == "en" %}
+		            <button class="selected" name="locale" value="en">EN</button>
+		            <button name="locale" value="fr">FR</button>
+		        {% else %}
+		            <button name="locale" value="en">EN</button>
+		            <button class="selected" name="locale" value="fr">FR</button>
+		        {% endif %}
+		        <input type="hidden" name="next" value="{{ request.path }}" />
+		    </form>
+	    </li>
+	  </ul>
+	</div><!--/.navbar-collapse -->
+</div>
 
-<a href="/">{% trans "home" %}</a>
+	
