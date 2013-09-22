@@ -8,8 +8,7 @@ INSTALLED_APPS += ('storages',)
 
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse(os.environ.get(
-    'HEROKU_POSTGRESQL_AMBER_URL ',
-    'postgres://socketubs:@localhost/www-mylenela-fr'))}
+    'DATABASE_URL'))}
 ALLOWED_HOSTS = ['localhost']
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
