@@ -22,10 +22,7 @@ CACHES = {
     }
 }
 
-ALLOWED_HOSTS = [
-    'www-mylenela-fr.herokuapp.com',
-    'www.mylenela.fr',
-    'mylenela.fr']
+ALLOWED_HOSTS = ['*']
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
