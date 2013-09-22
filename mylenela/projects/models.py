@@ -10,7 +10,7 @@ class Image(models.Model):
     image = models.FileField(upload_to='images')
 
     def __unicode__(self):
-        return self.filename
+        return unicode(self.image)
 
 
 class Category(models.Model):
@@ -43,8 +43,8 @@ class Project(models.Model):
     link = models.URLField(help_text="Project Url", blank=True, null=True)
     date = models.DateField(db_index=True, default=datetime.now)
     categories = models.ManyToManyField(Category, help_text="Project categories")
-    cover = models.URLField(help_text="Cover image")
-    images = models.CharField(max_length=1000)
+    cover = models.ForeignKey(Image, help_text="Cover image", related_name="cover")
+    images = models.ManyToManyField(Image, related_name="images")
 
     class Meta:
         translate = ('name', 'description',)
