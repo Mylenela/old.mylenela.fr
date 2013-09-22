@@ -18,7 +18,7 @@ class Page(models.Model):
 
     def save(self, *args, **kwargs):
         cache.delete("page:%s" % self.slug)
-        cache.set("page:%s" % self.slug, self)
         cache.delete("pages")
-        cache.set("pages", Page.objects.all())
         super(Page, self).save(*args, **kwargs)
+        cache.set("page:%s" % self.slug, self)
+        cache.set("pages", Page.objects.all())

@@ -28,10 +28,10 @@ class Category(models.Model):
 
     def save(self, *args, **kwargs):
         cache.delete('category:%s' % self.slug)
-        cache.set('category:%s' % self.slug, self)
         cache.delete('categories')
-        cache.set('categories', Category.objects.all())
         super(Category, self).save(*args, **kwargs)
+        cache.set('category:%s' % self.slug, self)
+        cache.set('categories', Category.objects.all())
 
 
 class Project(models.Model):
