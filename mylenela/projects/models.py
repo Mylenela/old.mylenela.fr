@@ -43,7 +43,7 @@ class Project(models.Model):
     link = models.URLField(help_text="Project Url", blank=True, null=True)
     date = models.DateField(db_index=True, default=datetime.now)
     categories = models.ManyToManyField(Category, help_text="Project categories")
-    cover = models.ForeignKey(Image, help_text="Cover image", related_name="cover")
+    cover = models.ForeignKey(Image, null=True, help_text="Cover image", related_name="cover")
     images = models.ManyToManyField(Image, related_name="images")
 
     class Meta:
