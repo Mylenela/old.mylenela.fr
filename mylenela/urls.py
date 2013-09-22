@@ -3,6 +3,7 @@ from django.conf.urls import url
 from django.conf.urls import include
 from django.conf.urls import patterns
 
+
 admin.autodiscover()
 
 urlpatterns = patterns(

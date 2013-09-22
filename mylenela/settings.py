@@ -42,10 +42,11 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'mylenela', 'uploads')
 MEDIA_URL = ''
-STATIC_ROOT = os.path.join(SITE_ROOT, 'mylenela', 'static')
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT, "mylenela", "static"),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -137,5 +138,8 @@ LANGUAGES = (
 )
 DEFAULT_LANGUAGE = 1
 LOCALEURL_USE_SESSION = True
+LOCALE_INDEPENDENT_PATHS = (
+    r'^/static',
+)
 TRANSMETA_LANGUAGES = LANGUAGES
 TRANSMETA_DEFAULT_LANGUAGE = 'en'
