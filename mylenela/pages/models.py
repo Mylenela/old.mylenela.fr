@@ -6,7 +6,7 @@ from django.core.cache import cache
 class Page(models.Model):
     __metaclass__ = TransMeta
 
-    name = models.CharField(max_length=50, unique=True, verbose_name='Name')
+    name = models.CharField(max_length=50, verbose_name='Name')
     slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField(verbose_name='Content')
 

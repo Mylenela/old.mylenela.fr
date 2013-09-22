@@ -1,15 +1,16 @@
+# -*- coding: utf-8 -*-
+from datetime import datetime
 from django.db import models
 from django.db.models import permalink
 from django.core.cache import cache
-
 from transmeta import TransMeta
 
 
 class Category(models.Model):
     __metaclass__ = TransMeta
 
-    name = models.CharField(max_length=50, unique=True, verbose_name='Name')
-    slug = models.SlugField(max_length=100)
+    name = models.CharField(max_length=50, verbose_name='Name')
+    slug = models.SlugField(max_length=100, unique=True)
 
     class Meta:
         translate = ('name',)
@@ -29,11 +30,11 @@ class Category(models.Model):
 class Project(models.Model):
     __metaclass__ = TransMeta
 
-    name = models.CharField(max_length=50, unique=True, verbose_name='Name')
-    slug = models.SlugField(max_length=100)
+    name = models.CharField(max_length=50, verbose_name='Name')
+    slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(verbose_name='Description')
-    link = models.URLField(help_text="Project Url", blank=True)
-    date = models.DateField(db_index=True)
+    link = models.URLField(help_text="Project Url", blank=True, null=True)
+    date = models.DateField(db_index=True, default=datetime.now)
     categories = models.ManyToManyField(Category, help_text="Project categories")
     cover = models.URLField(help_text="Cover image")
     images = models.CharField(max_length=1000)
