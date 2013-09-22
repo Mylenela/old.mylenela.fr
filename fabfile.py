@@ -35,7 +35,10 @@ def syncdb(env="dev"):
 @task
 def collectstatic(env="dev"):
     check_virtualenv()
-    local('virtenv/bin/python manage.py collectstatic --settings=\'mylenela.settings_%s\'' % env)
+    if env == "prod":
+    	local('heroku run python manage.py collectstatic --settings=mylenela.settings_prod --noinput')
+    else:
+    	local('virtenv/bin/python manage.py collectstatic --settings=\'mylenela.settings_%s\'' % env)
 
 
 def virtualenv(command):
