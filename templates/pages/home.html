@@ -49,7 +49,7 @@
 			{% for project in projects %}
 			<div class="col-md-3 col-sm-4 col-xs-6 mix {{ project|class:"project" }}">
 		      	<a href="{% url 'view_project'  project.slug %}">
-		        	<img class="img-responsive" src="{{ project.img }}" alt="{{ project.name }}">
+		        	<img class="img-responsive" src="{{ project.cover.image.url }}" alt="{{ project.name }}">
 		        	<div class="title">
 		        		<span class="name">{{ project.name }}</span>
 		        		<span class="cat">{{ project.get_categories|join:" " }}</span>

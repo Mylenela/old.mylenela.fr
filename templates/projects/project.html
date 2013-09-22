@@ -21,9 +21,9 @@
         </div>
 	</div>
 	<div class="row" id="images">
-		{% for image in project.get_images %}
+		{% for image in project.images.all %}
 			<div class="col-lg-12">
-				<img class="img-responsive" src="{{ image }}" alt="{{ project.name }}">
+				<img class="img-responsive" src="{{ image.image.url }}" alt="{{ project.name }}">
 			</div>
 		{% endfor %}
 	</div>

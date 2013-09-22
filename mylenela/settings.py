@@ -145,3 +145,5 @@ TRANSMETA_DEFAULT_LANGUAGE = 'en'
 LOCALE_INDEPENDENT_PATHS = (
     r'^/static',
 )
+
+LOCALE_PATHS = (os.path.join(SITE_ROOT, 'locale'),)
