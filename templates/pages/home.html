@@ -37,9 +37,9 @@
 		  	</div>
 		  	<div class="col-lg-8 col-sm-12 controls">
 		      	<ul class="nav nav-pills">
-					<li class="filter" data-filter="all"><a href="#work">{% trans "All" %}</a></li>
+					<li class="filter" data-filter="all">{% trans "All" %}</li>
 					{% for category in categories %}
-						<li class="filter" data-filter="project-{{ category.slug }}"><a href="#work">{{ category.name }}</a></li>
+						<li class="filter" data-filter="project-{{ category.slug }}">{{ category.name }}</li>
 					{% endfor %}
 				</ul>
 		  	</div>
@@ -51,8 +51,8 @@
 		      	<a href="{% url 'view_project'  project.slug %}">
 		        	<img class="img-responsive" src="{{ project.cover.image.url }}" alt="{{ project.name }}">
 		        	<div class="title">
-		        		<span class="name">{{ project.name }}</span>
-		        		<span class="cat">{{ project.get_categories|join:" " }}</span>
+		        		<div class="name">{{ project.name }}</div>
+		        		<div class="cat">{{ project.get_categories|join:" " }}</div>
 		        	</div>
 		    	</a>
 			</div>
