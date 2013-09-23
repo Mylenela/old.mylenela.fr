@@ -7,10 +7,10 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':  os.path.join(SITE_ROOT, 'mylenela.db'),
+        'NAME': os.path.join(SITE_ROOT, 'mylenela.db'),
     }
 }
-
+SECRET_KEY = "f_!db_*)(1usnm8u9)q3goiuwrngg*r^h1kqd3l)p)9lxhyy4s"
 INSTALLED_APPS += ('debug_toolbar',)
 
 MIDDLEWARE_CLASSES += (
