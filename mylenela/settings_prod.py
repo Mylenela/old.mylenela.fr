@@ -35,3 +35,4 @@ AWS_STORAGE_BUCKET_NAME = "mylenela"
 AWS_HEADERS = {
     'Cache-Control': 'max-age=86400',
 }
+AWS_QUERYSTRING_AUTH = False
