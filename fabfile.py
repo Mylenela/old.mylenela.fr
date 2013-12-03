@@ -29,16 +29,16 @@ def runserver(env="dev", ip='127.0.0.1', port=8000, workers=2):
 def syncdb(env="dev"):
     check_virtualenv()
     local('virtenv/bin/python manage.py syncdb --settings=\'mylenela.settings_%s\'' % env)
-    local('virtenv/bin/python manage.py migrate')
+    local('virtenv/bin/python manage.py migrate --settings=\'mylenela.settings_%s\'' % env)
 
 
 @task
 def collectstatic(env="dev"):
     check_virtualenv()
     if env == "prod":
-    	local('heroku run python manage.py collectstatic --settings=mylenela.settings_prod --noinput')
+        local('heroku run python manage.py collectstatic --settings=mylenela.settings_prod --noinput')
     else:
-    	local('virtenv/bin/python manage.py collectstatic --settings=\'mylenela.settings_%s\'' % env)
+        local('virtenv/bin/python manage.py collectstatic --settings=\'mylenela.settings_%s\'' % env)
 
 
 def virtualenv(command):
