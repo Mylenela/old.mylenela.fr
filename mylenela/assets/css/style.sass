@@ -83,18 +83,18 @@ a:hover
 		float: right
 	li.filter
 		text-transform: uppercase
-		a
-			color: $fontcolor
-			border: 2px solid #fff
-			&:hover
-				background-color: transparent
-				color: $blue
-	li.filter.active 
-		a
+		cursor: pointer
+		padding: 10px
+		color: $fontcolor
+		border: 2px solid #fff
+		&:hover
 			background-color: transparent
-			color: $fontcolor
 			border: 2px solid $fontcolor
-			border-radius: 0px
+	li.active 
+		background-color: transparent
+		color: $fontcolor
+		border: 2px solid $fontcolor
+		border-radius: 0px
 #grid 
 	.mix
 		opacity: 0
