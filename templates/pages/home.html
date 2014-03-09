@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+	{% extends "layout.html" %}
 
 {% block title %}{% if LANGUAGE_CODE == 'fr' %}{{ home.name_fr }}{% else %}{{ home.name }}{% endif %}{% endblock %}
 
@@ -51,7 +51,7 @@
 		        	<img class="img-responsive" src="{{ project.cover.image.url }}" alt="{{ project.name }}">
 		        	<div class="title">
 		        		<div class="name">{{ project.name }}</div>
-		        		<div class="cat">{{ project.get_categories|join:" " }}</div>
+		        		<div class="cat">{{ project.categories.all|join:" " }}</div>
 		        	</div>
 		    	</a>
 			</div>

@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
-from mylenela.projects.models import Image
-from mylenela.projects.models import Project
-from mylenela.projects.models import Category
+from .models import Image
+from .models import Project
+from .models import Category
 
 
 class CategoryAdmin(admin.ModelAdmin):

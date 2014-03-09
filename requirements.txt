@@ -1,2 +1,5 @@
-pylibmc==1.2.3
--r requirements/prod.txt
+Django==1.6.2
+South==0.8.2
+django-localeurl==2.0.1
+django-transmeta==0.7.3
+psycopg2==2.4.5

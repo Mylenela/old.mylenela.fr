@@ -2,7 +2,6 @@
 from datetime import datetime
 from django.db import models
 from django.db.models import permalink
-from django.core.cache import cache
 from transmeta import TransMeta
 
 
@@ -26,13 +25,6 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        cache.delete('category:%s' % self.slug)
-        cache.delete('categories')
-        super(Category, self).save(*args, **kwargs)
-        cache.set('category:%s' % self.slug, self)
-        cache.set('categories', Category.objects.all())
-
 
 class Project(models.Model):
     __metaclass__ = TransMeta
@@ -42,8 +34,10 @@ class Project(models.Model):
     description = models.TextField(verbose_name='Description')
     link = models.URLField(help_text="Project Url", blank=True, null=True)
     date = models.DateField(db_index=True, default=datetime.now)
-    categories = models.ManyToManyField(Category, help_text="Project categories")
-    cover = models.ForeignKey(Image, null=True, help_text="Cover image", related_name="cover")
+    categories = models.ManyToManyField(
+        Category, help_text="Project categories")
+    cover = models.ForeignKey(
+        Image, null=True, help_text="Cover image", related_name="cover")
     images = models.ManyToManyField(Image, related_name="images")
 
     class Meta:
@@ -52,29 +46,12 @@ class Project(models.Model):
     def __unicode__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        cache.delete('project:%s:categories' % self.slug)
-        cache.delete('projects')
-        super(Project, self).save(*args, **kwargs)
-        cache.set('project:%s:categories' % self.slug, self.categories.all())
-        cache.set('projects', Project.objects.all().order_by('-date'))
-
     def get_images(self):
         return self.images.split(',')
 
-    @property
-    def get_categories(self):
-        if not cache.get('project:%s:categories' % self.slug):
-            categories = self.categories.all()
-            cache.set('project:%s:categories' % self.slug, categories)
-        return cache.get('project:%s:categories' % self.slug)
-
     def get_class(self, prefix):
         r = ""
-        if not cache.get('project:%s:categories' % self.slug):
-            categories = self.categories.all()
-            cache.set('project:%s:categories' % self.slug, categories)
-        categories = cache.get('project:%s:categories' % self.slug)
+        categories = self.categories.all()
         for category in categories:
             r += " %s-%s" % (prefix, category.slug)
         return r

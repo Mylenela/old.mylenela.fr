@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 from fabric.api import task
@@ -17,28 +18,22 @@ def update_requirements(env="dev"):
 
 
 @task
-def runserver(env="dev", ip='127.0.0.1', port=8000, workers=2):
+def runserver():
     check_virtualenv()
-    if env == 'prod':
-        virtualenv('gunicorn mylenela.wsgi:application --workers=%s -b %s:%s' % (workers, ip, port))
-    else:
-        local('virtenv/bin/python manage.py runserver %s:%s --settings=mylenela.settings_%s' % (ip, port, env))
+    local('virtenv/bin/python manage.py runserver')
 
 
 @task
-def syncdb(env="dev"):
+def syncdb():
     check_virtualenv()
-    local('virtenv/bin/python manage.py syncdb --settings=\'mylenela.settings_%s\'' % env)
-    local('virtenv/bin/python manage.py migrate --settings=\'mylenela.settings_%s\'' % env)
+    local('virtenv/bin/python manage.py syncdb')
+    local('virtenv/bin/python manage.py migrate')
 
 
 @task
-def collectstatic(env="dev"):
+def collectstatic():
     check_virtualenv()
-    if env == "prod":
-        local('heroku run python manage.py collectstatic --settings=mylenela.settings_prod --noinput')
-    else:
-        local('virtenv/bin/python manage.py collectstatic --settings=\'mylenela.settings_%s\'' % env)
+    local('virtenv/bin/python manage.py collectstatic')
 
 
 def virtualenv(command):

@@ -46,12 +46,9 @@ STATIC_ROOT = os.path.join(SITE_ROOT, "static")
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(SITE_ROOT, "mylenela", "assets"),
-    #os.path.join(SITE_ROOT, "mylenela", "static"),
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SITE_ROOT, "assets"),
 )
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -147,3 +144,10 @@ LOCALE_INDEPENDENT_PATHS = (
 )
 
 LOCALE_PATHS = (os.path.join(SITE_ROOT, 'locale'),)
+
+try:
+    from .local_settings import *
+except ImportError:
+    print('!! Warning! File "mylenela/local_settings.py" file is missing')
+    print('!! Copy "mylenela/local_settings_example.py" to start a new one')
+    exit(1)
