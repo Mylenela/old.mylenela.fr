@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+from fabric.api import run
 from fabric.api import task
 from fabric.api import local
 
@@ -53,3 +54,11 @@ def update_messages():
 @task
 def compile_messages():
     local('virtenv/bin/python manage.py compilemessages')
+
+
+@task
+def deploy():
+    run('cd /var/www/www.mylenela.fr && git pull')
+    run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py syncdb')
+    run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py migrate')
+    run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py collectstatic --noinput')

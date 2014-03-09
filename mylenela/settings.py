@@ -2,6 +2,7 @@
 import os
 from django.utils.crypto import get_random_string
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SITE_ROOT = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -20,13 +21,6 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
-    }
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake'
     }
 }
 
@@ -104,7 +98,6 @@ INSTALLED_APPS = (
     'mylenela.pages'
 )
 
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -129,6 +122,14 @@ LOGGING = {
     }
 }
 
+try:
+    from .local_settings import *
+except ImportError:
+    print('!! Warning! File "mylenela/local_settings.py" file is missing')
+    print('!! Copy "mylenela/local_settings_example.py" to start a new one')
+    exit(1)
+
+
 from django.utils.translation import gettext as _
 LANGUAGES = (
     ('en', _('English')),
@@ -145,10 +146,3 @@ LOCALE_INDEPENDENT_PATHS = (
 )
 
 LOCALE_PATHS = (os.path.join(SITE_ROOT, 'locale'),)
-
-try:
-    from .local_settings import *
-except ImportError:
-    print('!! Warning! File "mylenela/local_settings.py" file is missing')
-    print('!! Copy "mylenela/local_settings_example.py" to start a new one')
-    exit(1)
