@@ -46,6 +46,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder'
 )
 
@@ -57,6 +58,10 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
     #'django.template.loaders.eggs.Loader',
 )
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'localeurl.middleware.LocaleURLMiddleware',
@@ -94,6 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'localeurl',
+    'compressor',
     'mylenela.projects',
     'mylenela.pages'
 )
