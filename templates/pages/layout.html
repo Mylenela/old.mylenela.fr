@@ -11,12 +11,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
     <meta name="Author" content="Mylène Larnaud" />
     <meta name="Description" content="{% trans "I'm a graphic designer from France. I work on many kind of projects, like webdesign, print, datavisualisation, logos, illustration. I'm available for Freelance work." %}" />
     <META NAME="Keywords" content="{% trans "mylenela, mylène larnaud, graphic designer, french graphic designer, french, nantes, webdesign, illustration, datavisualisation" %}"/>
     <META NAME="Publisher" content="Mylène Larnaud" />
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
     <link href="{% static "css/style.css" %}" rel="stylesheet" media="screen">
     
 </head>
@@ -30,9 +30,9 @@
 	    </footer>
 	</div>
 
-	<script src="//code.jquery.com/jquery.js"></script>
+    <script src="{% static "js/jquery.js" %}"></script>
     <script src="{% static "js/jquery.mixitup.js" %}"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script type="text/javascript" src="//use.typekit.net/edf2cut.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">

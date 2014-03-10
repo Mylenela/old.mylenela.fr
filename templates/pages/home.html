@@ -48,7 +48,7 @@
 			{% for project in projects %}
 			<div class="col-md-3 col-sm-4 col-xs-6 mix {{ project|class:"project" }}">
 		      	<a href="{% url 'view_project'  project.slug %}">
-		        	<img class="img-responsive" src="{{ project.cover.image.url }}" alt="{{ project.name }}">
+                    <img class="img-responsive" data-original="{{ project.cover.image.url }}" src="{{ project.cover.image.url }}" alt="{{ project.name }}">
 		        	<div class="title">
 		        		<div class="name">{{ project.name }}</div>
 		        		<div class="cat">{{ project.categories.all|join:" " }}</div>
@@ -58,7 +58,5 @@
 			{% endfor %}
 		</div>
 
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"></script>
 {% endblock %}
