@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-22 19:41+0200\n"
+"POT-Creation-Date: 2014-06-19 16:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mylenela/settings.py:137
+#: mylenela/settings.py:141
 msgid "English"
 msgstr "Anglais"
 
-#: mylenela/settings.py:138
+#: mylenela/settings.py:142
 msgid "French"
 msgstr "Français"
 
@@ -47,42 +47,45 @@ msgid "Please try to reload a bit later"
 msgstr "Rechargez la page dans quelques instants"
 
 #: templates/pages/footer.html:5
-msgid "Mylène Larnaud |\tTel: +33(7) 70 53 63 33 | 44000 Nantes (France)"
-msgstr "Mylène Larnaud |\tTel: +33(7) 70 53 63 33 | 44000 Nantes (France)"
+#, fuzzy
+msgid ""
+"Mylène Larnaud |\tTel: +33(7) 70 53 63 33 | 26bis rue des Olivettes <br> "
+"44000 Nantes (France)"
+msgstr ""
+"Mylène Larnaud |\tTel: +33(7) 70 53 63 33 | 26bis rue des Olivettes <br> "
+"44000 Nantes (France)"
 
 #: templates/pages/footer.html:8
 msgid "Contact me here ! "
-msgstr "Contactez moi ici :"
+msgstr "Contactez moi ici : "
 
 #: templates/pages/header.html:16
 msgid "Home"
 msgstr "Accueil"
 
-#: templates/pages/home.html:14
+#: templates/pages/home.html:13
 msgid "Graphic Designer &amp; Illustrator<br>from Earth"
 msgstr "Je suis Designer graphique <br>&amp; Illustratrice"
 
-#: templates/pages/home.html:23
+#: templates/pages/home.html:22
 msgid ""
 "I'm a Graphic Designer &amp; Illustrator from Nantes, France. I cleverly "
 "combine design, creativity <br>and interactivity"
-msgstr ""
-""
-"Je mêle astucieusement design, creativité,<br>et fonctionnalité."
+msgstr "Je mêle astucieusement design, creativité,<br>et fonctionnalité."
 
-#: templates/pages/home.html:36
+#: templates/pages/home.html:35
 msgid "Selected Works"
 msgstr "Sélections"
 
-#: templates/pages/home.html:40
+#: templates/pages/home.html:39
 msgid "All"
 msgstr "Tout"
 
-#: templates/pages/layout.html:10
+#: templates/pages/layout.html:11
 msgid "Mylenela - Graphic Design Illustration Datavisualisation"
 msgstr "Mylenela - Graphic Design Illustration Datavisualisation Nantes"
 
-#: templates/pages/layout.html:16
+#: templates/pages/layout.html:17
 msgid ""
 "I'm a graphic designer from France. I work on many kind of projects, like "
 "webdesign, print, datavisualisation, logos, illustration. I'm available for "
@@ -93,7 +96,7 @@ msgstr ""
 "datavisualisation, l'illustration... Je suis disponible pour des contrats "
 "freelance."
 
-#: templates/pages/layout.html:17
+#: templates/pages/layout.html:18
 msgid ""
 "mylenela, mylène larnaud, graphic designer, french graphic designer, french, "
 "nantes, webdesign, illustration, datavisualisation"
