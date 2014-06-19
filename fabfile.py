@@ -13,9 +13,9 @@ def check_virtualenv():
 
 
 @task
-def update_requirements(env="dev"):
+def update_requirements():
     check_virtualenv()
-    local('virtenv/bin/pip install -r requirements/%s.txt' % env)
+    local('virtenv/bin/pip install -r requirements.txt' % env)
 
 
 @task
