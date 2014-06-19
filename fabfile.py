@@ -65,3 +65,4 @@ def deploy():
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py collectstatic --noinput')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py mtime_cache --clean')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py compress')
+    print('!! Application must be reload')
