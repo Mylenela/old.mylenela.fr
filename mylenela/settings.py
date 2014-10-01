@@ -97,7 +97,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'south',
     'localeurl',
     'compressor',
     'mylenela.projects',
@@ -136,7 +135,7 @@ except ImportError:
     exit(1)
 
 
-from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _
 LANGUAGES = (
     ('en', _('English')),
     ('fr', _('French')),
