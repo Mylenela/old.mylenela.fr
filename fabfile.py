@@ -27,7 +27,6 @@ def runserver():
 @task
 def syncdb():
     check_virtualenv()
-    local('virtenv/bin/python manage.py syncdb')
     local('virtenv/bin/python manage.py migrate')
 
 
@@ -60,7 +59,6 @@ def compile_messages():
 def deploy():
     run('cd /var/www/www.mylenela.fr && git pull')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/pip install -r requirements.txt')
-    run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py syncdb')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py migrate')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py collectstatic --noinput')
     run('cd /var/www/www.mylenela.fr && virtenv/bin/python manage.py mtime_cache --clean')
