@@ -10,7 +10,8 @@ from ..projects.models import Category
 def view_home(request):
     home = get_object_or_404(Page, slug="home")
     categories = Category.objects.all()
-    projects = Project.objects.all().order_by('-date')
+    projects = Project.objects.all().order_by(
+        '-date').prefetch_related('categories', 'cover')
 
     return render(
         request,
