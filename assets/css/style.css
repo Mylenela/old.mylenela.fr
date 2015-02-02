@@ -28,7 +28,10 @@ a:hover {
 #header {
   background-color: #42698e;
   border: none;
-  padding-top: 30px; }
+  padding-top: 30px; 
+  top: 0px;
+  width: 100%;
+  position: absolute; }
   #header .navbar-brand {
     margin-top: -10px; }
   #header ul#menu {
