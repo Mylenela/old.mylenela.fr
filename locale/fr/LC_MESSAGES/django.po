@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-19 16:41+0200\n"
+"POT-Creation-Date: 2015-02-02 11:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: mylenela/settings.py:141
+#: mylenela/settings.py:140
 msgid "English"
 msgstr "Anglais"
 
-#: mylenela/settings.py:142
+#: mylenela/settings.py:141
 msgid "French"
 msgstr "Français"
 
@@ -62,10 +62,6 @@ msgstr "Contactez moi ici : "
 #: templates/pages/header.html:16
 msgid "Home"
 msgstr "Accueil"
-
-#: templates/pages/home.html:13
-msgid "Graphic Designer &amp; Illustrator<br>from Earth"
-msgstr "Je suis Designer graphique <br>&amp; Illustratrice"
 
 #: templates/pages/home.html:22
 msgid ""
@@ -109,3 +105,6 @@ msgstr ""
 #: templates/projects/project.html:9
 msgid "Selected Work"
 msgstr "Sélections"
+
+#~ msgid "Graphic Designer &amp; Illustrator<br>from Earth"
+#~ msgstr "Je suis Designer graphique <br>&amp; Illustratrice"
