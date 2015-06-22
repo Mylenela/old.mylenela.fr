@@ -47,7 +47,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
-    #'django.contrib.staticfiles.finders.DefaultStorageFinder'
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder'
 )
 
 chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
@@ -56,7 +56,7 @@ SECRET_KEY = get_random_string(50, chars)
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 COMPRESS_ENABLED = True
@@ -97,6 +97,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'cachalot',
     'localeurl',
     'compressor',
     'mylenela.projects',

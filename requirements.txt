@@ -2,3 +2,4 @@ Django==1.7.7
 django-localeurl==2.0.1
 django-transmeta==0.7.3
 django-compressor==1.4
+django-cachalot==1.0.3
