@@ -3,3 +3,4 @@ django-localeurl==2.0.1
 django-transmeta==0.7.3
 django-compressor==1.4
 django-cachalot==1.0.3
+django-redis==4.0.0
