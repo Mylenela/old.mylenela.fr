@@ -1,6 +1,6 @@
-Django==1.7.7
-django-localeurl==2.0.1
+Django==1.8.5
+django-localeurl==2.0.2
 django-transmeta==0.7.3
-django-compressor==1.4
-django-cachalot==1.0.3
-django-redis==4.0.0
+django-compressor==1.5
+django-cachalot==1.1.0
+django-redis==4.3.0
